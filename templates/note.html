@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/note.css' %}">
+    <title>Insertion de note</title>
+</head>
+<body class="container">
+    <div class="d-flex mb-2">
+        <div class="bg-success text-white">
+            <input type="checkbox" class="saisi p-2 "> Mode saisi de note
+        </div>
+        <div >
+            <select name="" id="" class="ms-3 p-2">
+                <option value="">6eme</option>
+                <option value="">5eme</option>
+            </select>
+        </div>
+        <div >
+            <select name="" id="" class="ms-3 p-2">
+                <option value="">Matière</option>
+                <option value="">Mathématiques</option>
+                <option value="">Français</option>
+            </select>
+        </div>
+        <div >
+            <select name="" id="" class="ms-3 p-2">
+                <option value="">1er trimestre</option>
+                <option value="">2eme trimestre</option>
+                <option value="">3eme trimestre</option>
+            </select>
+        </div>
+        <div >
+            <button class="btn btn-primary ms-3 p-2 submit-btn">Enregistrer les notes</button>
+        </div>
+    </div>
+    <table class="table table-bordered border-dark">
+        <thead class="table-dark">
+            <th>Nom et prenon</th>
+            <th>Int1<input type="checkbox" name="int1" class="it1"></th>
+            <th>Int2<input type="checkbox" name="int2" class="it2"></th>
+            <th>Int3<input type="checkbox" name="int3" class="it3"></th>
+            <th>Int4<input type="checkbox" name="int4" class="it4"></th>
+            <th>Moy-int</th>
+            <th>Devoir<input type="checkbox" name="devoi" class="dv"></th>
+            <th>Compo<input type="checkbox" name="compo" class="cp"></th>
+            <th>Moy-trim</th>
+            <th>Rang</th>
+            <th>Observation</th>
+        </thead>
+        {% if eleve is not None %}
+            {% for e in eleve %}
+                <tbody class="table-group-divider">
+                    <td>{{ e.nom }} {{ e.prenom }}</td>
+                    <td>
+                        {% if e.int1 is not None %}
+                            {{ e.int1 }}
+                        {% else %}
+                             <div class="int1"></div>
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if e.int2 is not None %}
+                            {{ e.int2 }}
+                        {% else %}
+                             <div class="int2"></div>
+                        {% endif %} 
+                    </td>
+                    <td>
+                        {% if e.int3 is not None %}
+                            {{ e.int3 }}
+                        {% else %}
+                            <div class="int3"></div>
+                        {% endif %} 
+                    </td>
+                    <td>
+                        {% if e.int4 is not None %}
+                            {{ e.int4 }}
+                        {% else %}
+                             <div class="int4"></div>
+                        {% endif %} 
+                    </td>
+                    <td>{{ e.moy_int }}</td>
+                    <td>
+                        {% if e.devoir is not None %}
+                            {{ e.devoir }}
+                        {% else %}
+                            <div class="devoir"></div>
+                        {% endif %} 
+                    </td>
+                    <td>
+                        {% if e.compo is not None %}
+                            {{ e.compo }}
+                        {% else %}
+                            <div class="compo"></div>
+                        {% endif %} 
+                    </td>
+                    <td>{{ e.moy_trim }}</td>
+                    <td>{{ e.rang }}</td>
+                    <td>{{ e.observation }}</td>
+                </tbody>
+            {% endfor %}
+        {% endif %}
+    </table>
+    <script src="{% static 'js/note.js' %}"></script>
+</body>
+</html>

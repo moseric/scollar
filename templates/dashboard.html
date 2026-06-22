@@ -1,0 +1,395 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <title>Page_Administration</title>
+</head>
+<body class="container d-flex p-2">
+    <div class="menu">
+        <nav class="tboard">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5z"/>
+            </svg>
+            <a href="#">Tableau de board</a>
+        </nav>
+        <nav class="tclasse">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293z"/>
+            <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293z"/>
+            </svg>
+            <a href="#">classe</a>
+        </nav>
+        <nav class="tpersonnel"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+            <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.24 2.24 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.3 6.3 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/>
+            </svg>
+            <a href="#">personnels</a>
+        </nav>
+        <nav class="televe">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-standing-dress" viewBox="0 0 16 16">
+            <path d="M8 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m-.5 12.25V12h1v3.25a.75.75 0 0 0 1.5 0V12h1l-1-5v-.215a.285.285 0 0 1 .56-.078l.793 2.777a.711.711 0 1 0 1.364-.405l-1.065-3.461A3 3 0 0 0 8.784 3.5H7.216a3 3 0 0 0-2.868 2.118L3.283 9.079a.711.711 0 1 0 1.365.405l.793-2.777a.285.285 0 0 1 .56.078V7l-1 5h1v3.25a.75.75 0 0 0 1.5 0Z"/>
+            </svg>
+            <a href="#">eleves</a> 
+        </nav>
+        <nav class="tsaisi">
+            <a href="saisi_note/"> saisie note</a>
+        </nav>
+        <nav class="tplaning">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16">
+            <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+            </svg>
+            <a href="#">planning</a>
+        </nav>
+        <nav class="tpaiement">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-credit-card-2-back" viewBox="0 0 16 16">
+            <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5z"/>
+            <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1m-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1"/>
+            </svg>
+            <a href="#">paiements</a>
+        </nav>
+        <nav class="parametre">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+            <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+            </svg>
+            <a href="#">Parametre</a>
+        </nav>
+    </div>
+    <div class="w-100 board">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="d-flex mb-3">
+            <h1 class="">Tableau de board</h1> 
+            <button class="ms-auto btn btn-primary " data-bs-toggle="modal" data-bs-target="#ajoutClasse">
+                +Ajouter une matière
+            </button>
+            <div class="modal fade" id="ajoutClasse" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ajouter une matière</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <form method="POST" action="{% url 'ajouter_classe' %}">
+                            {% csrf_token %}
+                            <div class="modal-body">
+
+                                <div class="mt-2 p-2">
+                                    <label for="">matière</label>
+                                    <input type="text" name="matiere" class="form-control rounded-1">
+                                </div>
+                                <div class="mt-2 p-2">
+                                    <label for="">Coefficient</label>
+                                    <input type="text" name="coefficiant" class="form-control rounded-1">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">  
+                                    Annuler
+                                </button>
+
+                                <button type="submit" class="btn btn-primary">
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <button class=" ms-3 btn btn-primary" data-bs-toggle="modal" data-bs-target="#ajout_emploi">
+                +ajouter un emplois
+            </button>
+            <div class="modal fade" id="ajout_emploi" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                             Ajouter un emploie du temps
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>                    
+                        </div>
+                       
+                    <form action="{% url 'ajouter_emploie' %}" method="POST">
+                        {% csrf_token %}
+                        <div class="modal-body">
+                            <div class="mt-2 p-2">
+                                <label for="">Jours</label>
+                                <input type="text" name="jours" class="form-control">
+                            </div>
+                            <div class="mt-2 p-2">
+                                <label for="">heure de but</label>
+                                <input type="text"  name="heure_debut" class="form-control">
+                            </div>
+                            <div class="mt-2 p-2">
+                                <label for="">Heure fin</label>
+                                <input type="text" name="heure_fin" class="form-control">
+                            </div>
+                            <div class="mt-2 p-2">
+                                <label for="">Nombre heures</label>
+                                <input type="text" name="nombre_heure" class="form-control">
+                            </div>
+                            <div class="mt-2 p-2">
+                                <label for="">Matiere</label>
+                                <input type="text" name="matiere" class="form-control ">
+                            </div>
+                            <div class="mt-2 p-2">
+                                <label for="">Enseignant</label>
+                                <input type="text" name="enseignant" class="form-control ">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <div>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal-close">
+                                    Annuler
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="d-xl-flex d-sm-block mx-auto">
+            <div class="eleves mx-auto text-center p-1">
+                Eleves 
+                <div class="fs-3">{{nombre}}</div>
+            </div>
+            <div class="classe mx-auto text-center p-1">
+                Classe 
+                <div class="fs-3">
+                    {{nom}}
+                </div>
+            </div>
+            <div class="enseignant mx-auto text-center p-1">
+                Enseignant
+                <div class="fs-3">{{person}}</div>
+            </div>
+            <div class="paiement mx-auto text-center p-1">
+                Paiement
+            </div>
+        </div>
+        <div class="d-xl-flex mt-4 description">
+            <div class="mx-auto bg-light p-2 rounded w-25">
+                <span class="fs-4">
+                    Aperçue financier
+                </span>
+            </div>
+            <div class="mx-auto bg-light rounded w-25">
+                <h4 class="fs-4 bg-info mb-5 rounded p-2">
+                    Mise a jours des donner
+                </h4>
+                <button type="button" class="ms-2 btn btn-warning" data-bs-toggle="modal" data-bs-target="#transfert">
+                    Transferer un eleves
+                </button>
+                <div class="modal fade" id="transfert" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">
+                                    Transeferer un aprenant vers un autre classe
+                                </h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <form action="">
+                            <div class="modal-body">
+                                <div>
+                                    <label for="">Entrer le nom et prenoms de l'apprenant</label>
+                                    <input type="text" name="nom_prenom" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="">la classe destinataire</label>
+                                    <input type="text" name="niveau" class="form-control">
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class=" btn btn-secondary" data-bs-dismiss="modal">
+                                    Annuler
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Transferer
+                                </button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--- la partie concernant les heures effectuer-->
+                <button type="buttons" class=" ms-2 mt-3 btn btn-success" data-bs-toggle="modal" data-bs-target="#horaire">
+                    Heures effectuées
+                </button>
+                <div class="modal fade" id="horaire" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Enregistrer les heures effectuées dans le mois</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <form action="">
+                            <div class="modal-body">
+                                <div>
+                                    <label for="">le mois</label>
+                                    <input type="text" name="mois" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="">Nom de l'enseignant</label>
+                                    <input type="text" name="nom_enseignant" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="">le quota horaire</label>
+                                    <input type="text" name="quota_horaire" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="">Matiere</label>
+                                    <input type="text" name="matiere" class="form-control">
+                                </div>
+                                <div>
+                                    <label for="">Nombre d'heure</label>
+                                    <input type="text" name="nombre_heure" class="form-control">
+                                </div>
+                                
+                            </div>
+                            </form>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                    Annuler
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    Enregistrer
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mx-auto bg-light p-2 rounded w-25">
+                <span class="fs-4">
+                    Suggestion
+                </span>
+            </div>
+        </div>
+    </div>
+    <!---la partie pour afficher  les information sur les classe-->
+    <div class="mx-auto w-75 classes ">
+        <table class="table  ">
+                <thead class="table-dark">
+                    <th class="text-center">
+                        classe 
+                    </th>
+                    <th class="text-center">
+                        Effectif garçon
+                    </th>
+                    <th class="text-center">
+                        Effectif Fille
+                    </th>
+                    <th class="text-center">
+                        Effectif Total
+                    </th>
+                </thead>
+            {% for item in effectifs %}
+                <tr>
+                    <td class="text-center">{{item.niveau}}</td>
+                    <td class="text-center">{{item.garcon}}</td>
+                    <td class="text-center">{{item.fille}}</td>
+                    <td class="text-center">{{item.effectif}}</td>
+                </tr>
+            {% endfor %}  
+        </table>  
+    </div>
+    <!--- la partie pour inserrer les matiere de l'etablissement-->
+
+    <div class="w-100 matiere ">
+
+    </div>
+    <!--- la partie oü il faut inserer les emplois du temps de l'éteblissement-->
+
+    <div class="w-100  emploie">
+        <table class="table">
+            <thead class="table-dark">
+                <th>Jours</th>
+                <th>heures</th>
+                <th>Matière</th>
+                <th>Enseigants</th>
+            </thead>
+            {% for employ in emploie %}
+                <tr>
+                    <td>{{employ.jours}}</td>
+                    <td>{{employ.heure_debut}} - {{employ.heure_fin}}</td>
+                    <td>{{employ.matiere}}</td>
+                    <td>{{employ.enseignant}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="w-75 mx-auto elev">
+        <div>
+            <h3 class="text-center">
+                    Information de la note
+            </h3>
+            <form action="" method="post" class="w-50 mx-auto p-2 mt-3 ">
+                <div class="">
+                    <div>
+                    <label for="">classe</label>
+                    <select name="" id="" class=" form-select  mt-2 p-2">
+                        <option value=""></option>
+                    </select>
+                    </div>
+                    <div>
+                        <label for="">Matiere</label>
+                        <select name="" id="" class=" form-select mt-2 p-2">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">type de control</label>
+                        <select name="" id="" class=" form-select mt-2 p-2">
+                            <option value="int1">int 1</option>
+                            <option value="int2">Int 2</option>
+                            <option value="int3">Int 3</option>
+                            <option value="int4">Int 4</option>
+                            <option value="devoir">Devoir</option>
+                            <option value="compo">Compos</option>
+                        </select>
+                    </div>
+                    <div>
+                        <input type="submit" value="enregistrer" class="bg-primary text-white p-2 mt-2">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div>
+            <table class="table mt-3">
+                <thead class="table-dark">
+                    <th>Nom et prenom</th>
+                    <th>classe</th>
+                    <th>Numero parent</th>
+                </thead>
+            {% for inf in infos%}
+                <tr>
+                    <td>{{inf.nom_prenom}}</td>
+                    <td>{{inf.niveau}}</td>
+                    <td>{{inf.whatsapp}}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    
+</body>
+</html>

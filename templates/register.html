@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <title>Enregistrer un élève </title>
+</head>
+<body>
+    <div class="d-flex  mt-5 mx-auto w-50">
+        <div class="w-50  text-center p-1 eleves">
+            Ajouter un élève
+        </div>
+        <div class="w-50  ms-2 text-center p-1 personnels">
+            Ajouter un personnel
+        </div>
+    </div>
+    {% if id != None %}
+        {% if id == 3 or id == 2 %}
+            <div class="text-success text-center">
+                information enregistrer avec succes
+            </div>
+        {% endif %}
+        {% if id == 4 %}
+            <div class="text-danger text-center">
+                information non enregistre 
+            </div>
+        {% endif %}
+        
+    {% endif %}  
+    <section class="w-50 mx-auto mt-1 eleve ">
+        <form method="post" action="{% url 'register_eleve' %}" class="border border-secondary p-4 rounded mb-3">
+            {% csrf_token %}
+            <h1 class="text-center text-primary">Enregistrer un élève</h1>
+            <div class="d-flex mx-auto row">
+                <div class="mb-3 col">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Nom et prenom de l'élève</label>
+                        <input type="text" class="form-control" id="name" name="nom_prenom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="sexe" class="form-label">Sexe de l'élève</label>
+                        <select name="sexe" id="sexe" class="form-control" required>
+                            <option value="Masculin">Masculin</option>
+                            <option value="Feminin">Feminin</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="niveau" class="form-label">Niveau de l'élève</label>
+                        <input type="text" class="form-control" id="niveau" name="niveau" required>
+                    </div>
+                </div>
+                <div class="ms-3 col">
+                    <div class="mb-3">
+                        <label for="date_naissance" class="form-label">Date de naissance </label>
+                        <input type="date" class="form-control" id="date_naissance" name="date_naissance" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="num_educmaster" class="form-label">Numéro educmaster </label>
+                        <input type="text" class="form-control" id="num_educmaster" name="num_educmaster" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="statut" class="form-label">statut de l'élève</label>
+                        <select name="statut" id="statut" class="form-control" required>
+                            <option value="Redoublant">Redoublant</option>
+                            <option value="Nouveau">Nouveau</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="whatsapp" class="form-label"> WhatsApp du parent</label>
+                        <input type="text" class="form-control" id="whatsapp" name="whatsapp" required>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+    </section>
+    <section class="w-50 mx-auto mt-1 personnel">
+        <form action="{% url 'personna' %}" method="POST" class="border border-secondary p-4 rounded mb-3">
+            {% csrf_token %}
+            <div>
+                <h1 class="text-center text-primary"> 
+                    Enregistrés le personnnel
+                </h1>
+                <div>
+                    <label for="name" class="form-label">Nom du personel</label>
+                    <input type="text" class="form-control" id="name" name="name"  required>
+                </div>
+                <div>
+                    <label for="Prenoms" class="form-label">Prenoms du personel</label>
+                    <input type="text" class="form-control" id="email" name="prenom"  required>
+                </div>
+                <div>
+                    <label for="sexe" class="form-label">Sexe du personel</label>
+                    <input type="text" class="form-control" id="sexe" name="sexe" >
+                </div>
+                <div>
+                    <label for="niveau" class="form-label">Diplome</label>
+                    <input type="text" class="form-control" id="niveau" name="diplome" >
+                </div>
+                <div>
+                    <label for="date_naissance" class="form-label">Date de naissance du personel</label>
+                    <input type="date" class="form-control" id="date_naissance" name="date_naissance"  required>
+                </div>
+                <div>
+                    <label for="num_educmaster" class="form-label">Numéro educmaster du personel</label>
+                    <input type="text" class="form-control" id="num_educmaster" name="num_educmaster"  required>
+                </div>
+                <div>
+                    <label for="whatsapp">whatsapp</label>
+                    <input type="tel" name="whatsapp" class="form-control">
+                </div>
+                <div>
+                    <label for="">poste</label>
+                    <input type="text" name="poste" class="form-control">
+                </div>
+                <div >
+                    <input type="checkbox" value="6eme" name="classe">6eme
+                    <input type="checkbox" value="5eme" name="classe">5eme
+                    <input type="checkbox" value="4eme" name="classe">4eme
+                    <input type="checkbox" value="3eme" name="classe">3eme
+                    <input type="checkbox" value="2ndA1" name="classe">2nd A1
+                    <input type="checkbox" value="2ndA2" name="classe">2nd A2
+                    <input type="checkbox" value="2ndB" name="classe">2nd B
+                    <input type="checkbox" value="2ndC" name="classe">2nd C
+                    <input type="checkbox" value="2ndD" name="classe">2nde D
+                    <input type="checkbox" value="1ereA1" name="classe">1ere A1
+                    <input type="checkbox" value="1ereA2" name="classe">1ere A2
+                    <input type="checkbox" value="1ereB" name="classe">1ere B
+                    <input type="checkbox" value="1ereC" name="classe">1ere C
+                    <input type="checkbox" value="1ereD" name="classe">1ere D
+                    <input type="checkbox" value="TlA1" name="classe">Tle A1
+                    <input type="checkbox" value="TlA2" name="classe">Tle A2
+                    <input type="checkbox" value="TlB" name="classe">Tle B
+                    <input type="checkbox" value="TlC" name="classe">Tle C
+                    <input type="checkbox" value="TlD" name="classe">Tle D
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-primary">Enregistrer</button>
+            </div>
+        </form>
+    </section>
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+.eleves{
+    background-color: blue;
+    color: white;
+    width: 20%;
+    height: 5rem;
+    border-radius: 10px;
+}
+.classe{
+    background-color: green;
+    color: white;
+    width: 20%;
+    height: 5rem;
+    border-radius: 10px;
+}
+.enseignant{
+    background-color: rgb(235, 82, 11);
+    color: white;
+    width: 20%;
+    height: 5rem;
+    border-radius: 10px;
+}
+.paiement{
+    background-color: blueviolet;
+    color: white;
+    width: 20%;
+    height: 5rem;
+    border-radius: 10px;
+}
+nav{
+    font-size: 20px;
+    padding: 5px;
+    margin-top: 5px;
+
+}
+.board{
+    background-color: rgba(162, 173, 182, 0.425);
+    height: 100vh;
+}
+.menu{
+    height: 100vh;
+}
+h1{
+    background-color: white;
+    margin-bottom: 10px;
+
+}
+.description{
+    height: 70vh;
+}
+nav>a,nav{
+    text-decoration: none;
+    color: black;
+    padding: 2px;
+    border-radius: 5px;
+    background: linear-gradient(black 0 0);
+    background-size: 0% 100% ;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease, color 0.5s ease;
+}
+
+nav>a:hover ,nav:hover{
+    transform: translateX(10px);
+    color: white;
+    background-size: 100% 100%;
+}
+form{
+    background-color: white;
+    z-index: 2;
+    border-radius: 12px;
+
+}
+.matiere,.emploie,.classes,.elev{
+    background-color: rgba(162, 173, 182, 0.425);
+    z-index: -1;
+    display: none;
+}
+
+
+

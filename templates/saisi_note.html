@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <title>saisie de notes</title>
+</head>
+<body>
+    <div class="w-75 mx-auto">
+        <h1>
+            saisie des notes par l'administration
+        </h1>
+        <div>
+            <h3>
+                    Information de la note
+            </h3>
+            <form action="" method="post" class="w-100 ">
+                <div class="d-flex">
+                    <div>
+                    <label for="">classe</label>
+                    <select name="" id="" class="w-25 select-form mx-auto">
+                        <option value=""></option>
+                    </select>
+                    </div>
+                    <div>
+                        <label for="">Matiere</label>
+                        <select name="" id="" class="w-25 select-form mx-auto">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">type de control</label>
+                        <select name="" id="" class="w-25 select-form mx-auto">
+                            <option value="int1">int 1</option>
+                            <option value="int2">Int 2</option>
+                            <option value="int3">Int 3</option>
+                            <option value="int4">Int 4</option>
+                            <option value="devoir">Devoir</option>
+                            <option value="compo">Compos</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
