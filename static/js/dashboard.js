@@ -53,16 +53,5 @@ televes.onclick = function(){
     classe.classList.remove('animate__animated', 'animate__zoomIn');
     planning.classList.remove('animate__animated', 'animate__zoomIn');
 
-    // la partie pour ajouter une classe
-    const ajout = document.querySelector('.ajout');
-    ajout.innerHTML += `
-    <button class="btn btn-primary"
-            data-bs-toggle="modal"
-            data-bs-target="#ajoutClasse">
-        Ajouter une classe
-    </button>
-`;
     
 }
-// la partie qui affiche le popup de eleve
-

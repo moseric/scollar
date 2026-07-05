@@ -1,0 +1,23 @@
+.login{
+    border-radius: 0px 10px 10px 0px;
+    height: 40vh;
+    box-shadow: 5px 5xp 10px red;
+    align-items: center;
+    display: flex;
+}
+.model{
+    height: 100vh;
+    padding-top: 10rem;
+    background: linear-gradient(45deg,rgb(131, 29, 109),rgb(14, 86, 168) ,rgb(134, 111, 5));
+}
+.affiche{
+    height: 40vh;
+    font-family: initial;
+    box-shadow: 2px 2px 10px rgb(136, 8, 125);
+}
+.animation{
+    height: 10px;
+    width: 50%;
+    margin: auto;
+    background:linear-gradient(45deg,rgb(15, 70, 250),white);
+}

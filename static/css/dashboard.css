@@ -74,6 +74,15 @@ form{
     z-index: -1;
     display: none;
 }
+.total{
+    width: 90%;
+    height: 5rem;
+    background-color: rgb(235, 82, 11);
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
 
 
 

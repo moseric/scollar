@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'css/parent.css' %}">
+    <title>Document</title>
+</head>
+<body class="container">
+    <div class="text-center">
+        <h4>
+            Suivi de mes enfants
+        </h4>
+    </div>
+    <div>
+        <h6 class="text-center">
+            Vos enfants ont reçu aujourd'hui des copies dans les matières qui suivent
+        </h6>
+        <table class="table">
+            <thead class="table-dark">
+                <th class="text-center">Nom et prenom</th>
+                <th class="text-center">Interrogation 1</th>
+                <th class="text-center">Tinterrogation 2</th>
+                <th class="text-center">Interrogation 3</td>
+                <th class="text-center">Interrogation 4</th>
+                <th class="text-center">Devoir</th>
+                <th class="text-center">Composition</th>
+            </thead>
+    {% if messages %}
+        {% for message in message %}
+            <tr>
+                <td class="text-center">message.nom_prenom</td>
+                <td class="text-center"> {{message.Int1}}</td>
+                <td class="text-center">{{message.Int2}}</td>
+                <td class="text-center">{{message.Int3}}</td>
+                <td class="text-center">{{message.Int4}}</td>
+                <td class="text-center">{{message.dev}}</td>
+                <td class="text-center">{{message.compo}}</td>
+            </tr>
+        {% endfor %}
+    {% endif %}
+        </table>
+    </div>
+    <div class="d-xl-flex w-100 mx-auto">
+        <div class=" mt-5 w-25 mx-auto">
+            <h6 class="mb-auto text-center">
+                Avoir plus d'information sur le comportement de mon enfants
+            </h6>
+            <div class=" d-flex chat">
+                <div class="mt-auto input-group">
+                    <input type="text" class=" input form-control">
+                    <button type="submit" class="btn-ligth text-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
+                        <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-25 mt-5 mx-auto ">
+            <h6 class="mb-3 text-center">
+                infromation sur le paiement
+            </h6>
+            <div class="infos_paiement">
+                <div></div>
+                <div class="solde ms-2 me-2 mt-3">
+
+                </div>
+                <div class="solde ms-2 me-2 mt-3">
+
+                </div>
+                <div class="solde mt-3 ms-2 me-2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

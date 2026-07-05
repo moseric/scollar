@@ -21,7 +21,7 @@ from note import views as note_views
 from personnel import views as personnel_views
 from classe import views as classe_views
 from emploie import views as emploi_views
-
+from matiere import views as matiere_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('eleves/', views.index),
@@ -32,6 +32,8 @@ urlpatterns = [
     path('dashboard/',views.compter, name='dashboard'),
     path('dashboard/saisi_note/',views.saisie, name="saisi_note"),
     path('personna/',personnel_views.personna, name='personna'),
-    path('ajouter-classe/', classe_views.ajouter_classe, name='ajouter_classe'),
-    path('ajouter_emploie', emploi_views.emploi, name='ajouter_emploie')
+    path('ajouter_classe/', matiere_views.ajouter_classe, name='ajouter_classe'),
+    path('ajouter_emploie', emploi_views.emploi, name='ajouter_emploie'),
+    path('parent/', views.admin1, name='parent'),
+    path('enseignant/', views.admin2, name='enseignant')
 ]

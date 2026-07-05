@@ -11,7 +11,7 @@ from emploie.models import emploies
 def index(request):
     return render(request, 'dashboard.html')
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'login.html')
 
 # Afficher le formulaire d'enregistrement d'un élève et de personnel
 def register(request,id):
@@ -67,3 +67,9 @@ def compter(request):
         return render(request,'dashboard.html',{'nombre':nombre,'nom':nom,'person':person,'effectifs':effectifs,'infos':infos,'emploie':emploie})
     except IntegrityError:
         return HttpResponse('erreur de mise a jurs des donner')
+
+# affichage de la partie admine des parents
+def admin1(request):
+    return render(request,'dashbord_enseignant.html')
+def admin2(request):
+    return render(request,'admin_enseigant.html')
